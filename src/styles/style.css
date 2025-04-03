@@ -58,7 +58,7 @@ nav a:hover {
 /* Heroセクションのスタイル */
 .hero {
     height: 100vh; /* ビューポート全体の高さを占める */
-    background: url('../assets/IMG_3.jpg') no-repeat center center/cover; /* 背景画像を設定 */
+    background: url('../assets/img_3.jpg') no-repeat center center/cover; /* 背景画像を設定 */
     display: flex;
     justify-content: center;
     align-items: center;
