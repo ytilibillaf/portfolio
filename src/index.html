@@ -11,19 +11,17 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="works.html">Works</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="lang-switcher">
-            <button id="lang-en">EN</button>
-            <button id="lang-ja">JP</button>
-        </div>
+        <!-- ナビゲーションバーを読み込む -->
+        <div id="nav-placeholder"></div>
     </header>
+    <script>
+        // nav.html を読み込むスクリプト
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
     <main>
 <section class="hero">
             <h1>星屑</h1>

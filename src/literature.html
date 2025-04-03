@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature - 波音 ytilibillaf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Literatureセクションのスタイル */
+        #literature {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        #literature h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #literature .work {
+            margin-bottom: 40px;
+        }
+
+        #literature .work h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #literature .work p {
+            text-indent: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- ナビゲーションバーを読み込む -->
+        <div id="nav-placeholder"></div>
+    </header>
+    <script>
+        // nav.html を読み込むスクリプト
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+    <main>
+        <section id="literature">
+            <h2>Literature</h2>
+            <div class="work">
+                <h3>詩: 星屑の夢</h3>
+                <p>夜空に輝く星屑たち<br>その一つ一つが語る物語<br>私たちの夢を映し出す鏡のように。</p>
+            </div>
+            <div class="work">
+                <h3>日記: 春の訪れ</h3>
+                <p>今日は暖かな春の日。<br>庭の桜が満開になり、風に揺れる花びらが美しい。<br>この瞬間を忘れないように、心に刻む。</p>
+            </div>
+            <div class="work">
+                <h3>小説: 未来への扉</h3>
+                <p>彼女は古びた扉の前に立っていた。<br>その扉の向こうには、未知の世界が広がっているという。<br>勇気を振り絞り、彼女は扉を開けた。</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 ytilibillaf. All rights reserved.</p>
+    </footer>
+</body>
+</html>
