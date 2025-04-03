@@ -1,0 +1,42 @@
+body {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.lang-switcher button {
+  margin-left: 0.5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.gallery {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}

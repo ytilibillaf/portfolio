@@ -14,3 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Button was clicked!');
     });
 });
+
+const observer = new IntersectionObserver();
+const gallerys = document.querySelector('.gallery');
+observer.observe(gallerys)

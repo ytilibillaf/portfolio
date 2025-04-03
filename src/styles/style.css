@@ -55,20 +55,24 @@ nav a:hover {
     color: #0078d7;
 }
 
+/* Heroセクションのスタイル */
 .hero {
-    height: 100vh;
-    background: url('../assets/hero-image.jpg') no-repeat center center/cover;
+    height: 100vh; /* ビューポート全体の高さを占める */
+    background: url('../assets/IMG_3.jpg') no-repeat center center/cover; /* 背景画像を設定 */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.8); /* 半透明の白文字 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を追加 */
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-family: 'Playfair Display', serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 4rem; /* 見出しのサイズ */
+    font-weight: 400; /* 細字 */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+    padding: 20px 40px; /* 内側の余白 */
+    border-radius: 10px; /* 角を丸くする */
 }
 
 main {
@@ -165,5 +169,20 @@ p {
 
     footer {
         font-size: 0.8rem; /* フッターの文字サイズを小さく */
+    }
+}
+
+.fade-slide {
+    animation: fade-slide 3.0s ease;
+}
+
+@keyframes fade-slide {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

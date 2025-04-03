@@ -3,51 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ytilibillaf portfolio</title>
-    <!-- Google Fontsの読み込み -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>波音 ytilibillaf</title>
+<!-- Google Fontsの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <script defer src="scripts/lang-switcher.js"></script>
+<script defer src="scripts/lang-switcher.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#about" data-lang-key="about">About</a></li>
-                <li><a href="#works" data-lang-key="works">Works</a></li>
-                <li><a href="#contact" data-lang-key="contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="lang-switcher">
-                <button id="lang-en">EN</button>
-                <button id="lang-ja">JP</button>
-            </div>
         </nav>
+        <div class="lang-switcher">
+            <button id="lang-en">EN</button>
+            <button id="lang-ja">JP</button>
+        </div>
     </header>
     <main>
-        <section class="hero">
-            <h1>Welcome to My World</h1>
+<section class="hero">
+            <h1>星屑</h1>
         </section>
-        <section id="about">
-            <h1>About Me</h1>
-            <p>15歳の頃に写真を始め、2019年高校1年生の時に全日本写真展にて銅賞を受賞。写真に留まらず、詩や映像、絵、銅版画で抒情を表現。幼い頃にみた自らが惑星になる夢を手掛かりに、精神が安らぎ強く在ることができる場所、”花園”という概念を可視化するべく活動中。</p>
-        </section>
-        <section id="works">
-            <h2>My Works</h2>
-            <p>こちらは私の作品集です。</p>
-            <div class="gallery">
-                <img src="assets/IMG_0819_Original.jpg" alt="作品1">
-                <img src="assets/image2.jpg" alt="作品2">
-                <img src="assets/image3.jpg" alt="作品3">
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>お問い合わせはお気軽にどうぞ。</p>
-        </section>
+
+        
+        
     </main>
     <footer>
         <p>&copy; 2025 ytilibillaf. All rights reserved.</p>
     </footer>
     <script src="scripts/main.js"></script>
+<style>
+        /* Heroセクションのスタイル */
+        .hero {
+            height: 100vh; /* ビューポート全体の高さを占める */
+            background: url('assets/IMG_3.jpg') no-repeat center center/cover; /* 背景画像を設定 */
+            display: flex;
+            justify-content: flex-end; /* 右寄せ */
+            align-items: flex-start; /* 上寄せ */
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9); /* 半透明の白文字 */
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を追加 */
+            padding: 160px 120px; /* 余白を追加 */
+        }
+
+        .hero h1 {
+  font-size: 2rem; /* 見出しのサイズを調整 */
+font-family: 'Noto Serif JP', serif; /* 明朝体風のフォントを適用 */
+        font-weight: 400; /* 標準の太さ */
+writing-mode: vertical-rl; /* 縦書きに変更 */
+            text-orientation: upright; /* 縦書きで文字を直立 */
+            margin: 0; /* 余白をリセット */
+            padding: 0; /* 内側の余白を削除 */
+background: none; /* 背景色を完全に削除 */
+            border: none; /* 枠線を完全に削除 */
+            box-shadow: none; /* 影を完全に削除 */
+        }
+
+        /* Worksセクションのギャラリー */
+        .gallery {
+            display: grid; /* グリッドレイアウトを使用 */
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 各画像の最小幅を150pxに設定 */
+            gap: 5px; /* 画像間のスペースを最小限に */
+        }
+
+        .gallery img {
+            width: 100%; /* 画像をグリッドセルの幅に合わせる */
+            height: auto; /* 縦横比を維持 */
+            object-fit: cover; /* セル内で画像を適切に収める */
+            border-radius: 5px; /* 角を少し丸くする */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* ホバー時に拡大 */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+        }
+    </style>
 </body>
 </html>
