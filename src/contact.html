@@ -6,6 +6,7 @@
     <title>Contact - 波音 ytilibillaf</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* Contactセクションのスタイル */
         #contact {
@@ -32,6 +33,37 @@
             gap: 10px;
             margin-top: 20px;
         }
+
+        .social-links.icons {
+            display: flex;             
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .social-links.icons a {
+            font-size: 28px;
+            color: #444;
+            transition: 0.3s ease;
+        }
+
+        .social-links.icons a:hover {
+            color: #888;
+        }
+
+        /* フッターのスタイル */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -52,10 +84,10 @@
             <h2>Contact</h2>
             <p>お問い合わせは以下のメールアドレスまたはSNSのDMをご利用ください。</p>
             <p><strong>Email:</strong> <a href="ytilibillaf@gmail.com">ytilibillaf@gmail.com</a></p>
-            <div class="social-links">
-                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ytilibillaf" target="_blank">instagram</a></p>
-                <p><strong>X (Twitter):</strong> <a href="https://twitter.com/ytilibillaf" target="_blank">X</a></p>
-                <p><strong>TikTok:</strong> <a href="https://www.tiktok.com/@ytilibillaf" target="_blank">TikTok</a></p>
+            <div class="social-links icons">
+                <a href="https://www.instagram.com/ytilibillaf" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/ytilibillaf" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@ytilibillaf" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
         </section>
     </main>
