@@ -18,12 +18,12 @@
 
         #contact a {
             text-decoration: none;
-            color: #007BFF;
+            color: rgb(120, 116, 116);
             transition: color 0.3s ease;
         }
 
         #contact a:hover {
-            color: #0056b3;
+            color: rgb(120, 116, 116);
         }
 
         #contact .social-links {
@@ -35,15 +35,22 @@
         }
 
         .social-links.icons {
-            display: flex;             
+            display: flex;
             flex-direction: row;
             gap: 20px;
+            justify-content: center; /* 横並びを中央に配置 */
+            width: 100%;  /* 親要素に十分な幅を設定 */
         }
 
         .social-links.icons a {
             font-size: 28px;
             color: #444;
             transition: 0.3s ease;
+            width: 50px;  /* アイコンの幅を設定 */
+            height: 50px; /* アイコンの高さを設定 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .social-links.icons a:hover {
