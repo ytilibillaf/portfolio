@@ -1,5 +1,7 @@
 body {
-  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif; /* 游明朝体とNoto Serif JPを指定 */
+  line-height: 1.8; /* 行間を広げて読みやすく */
+  color: #333; /* 落ち着いた文字色 */
   margin: 0;
   padding: 0;
 }
@@ -32,6 +34,13 @@ header nav ul li a {
   text-align: center;
   padding: 2rem;
   background-color: #f4f4f4;
+}
+
+.hero h1 {
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif; /* ヒーローセクションのフォントも変更 */
+  font-weight: 700; /* 太字 */
+  font-size: 2.5rem; /* サイズを調整 */
+  color: #222; /* 少し濃い文字色 */
 }
 
 .gallery {

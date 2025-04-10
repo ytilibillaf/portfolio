@@ -44,6 +44,15 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を追加 */
             padding: 160px 120px; /* 余白を追加 */
         }
 
+        /* レスポンシブ対応を追加（スマホ用） */
+        @media (max-width: 768px) {
+        .hero {
+            height: auto; /* 高さを自動にして切れないようにする */
+            padding: 80px 20px; /* 余白を小さくする */
+            background-position: center top; /* スマホに合わせて背景の位置調整 */
+        }
+        }       
+            
         .hero h1 {
   font-size: 2rem; /* 見出しのサイズを調整 */
 font-family: 'Noto Serif JP', serif; /* 明朝体風のフォントを適用 */
