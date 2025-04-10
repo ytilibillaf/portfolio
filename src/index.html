@@ -5,14 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>波音 ytilibillaf</title>
 <!-- Google Fontsの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 <script defer src="scripts/lang-switcher.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Serif JP', 'Yu Mincho', serif; /* 游明朝体とNoto Serif JPを指定 */
+        }
+    </style>
 </head>
 <body>
     <header>
         <!-- ナビゲーションバーを読み込む -->
         <div id="nav-placeholder"></div>
+        <!-- ハンバーガーメニュー -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">概要</a></li>
+                <li><a href="#works">作品</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
     </header>
     <script>
         // nav.html を読み込むスクリプト
@@ -40,19 +60,10 @@
             align-items: flex-start; /* 上寄せ */
             text-align: center;
             color: rgba(255, 255, 255, 0.9); /* 半透明の白文字 */
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を追加 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を追加 */
             padding: 160px 120px; /* 余白を追加 */
         }
 
-        /* レスポンシブ対応を追加（スマホ用） */
-        @media (max-width: 768px) {
-        .hero {
-            height: auto; /* 高さを自動にして切れないようにする */
-            padding: 80px 20px; /* 余白を小さくする */
-            background-position: center top; /* スマホに合わせて背景の位置調整 */
-        }
-        }       
-            
         .hero h1 {
   font-size: 2rem; /* 見出しのサイズを調整 */
 font-family: 'Noto Serif JP', serif; /* 明朝体風のフォントを適用 */
@@ -85,6 +96,52 @@ background: none; /* 背景色を完全に削除 */
         .gallery img:hover {
             transform: scale(1.05); /* ホバー時に拡大 */
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+        }
+
+        /* ハンバーガーメニューのスタイル */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+        }
+
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            margin: 10px 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
         }
     </style>
 </body>
