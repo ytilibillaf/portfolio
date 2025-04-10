@@ -1,5 +1,13 @@
 <nav>
-    <ul>
+    <!-- ハンバーガーメニューアイコン -->
+    <div class="menu-icon" id="menu-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- ナビゲーションリンク -->
+    <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="works.html">Works</a></li>
@@ -7,3 +15,76 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
+
+<style>
+    /* ナビゲーションバーの基本スタイル */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        padding: 10px 20px;
+        position: fixed;  /* 画面上部に固定 */
+        top: 0;  /* 上部に配置 */
+        left: 0;  /* 左に配置 */
+        width: 100%;  /* 幅を100%にして画面全体に広げる */
+        z-index: 1000;  /* 他の要素の上に表示させる */
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .menu-icon {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-icon .line {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+    }
+
+    /* モバイル向けのスタイル */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #333;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .menu-icon {
+            display: flex;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ハンバーガーメニューをクリックしたときにナビゲーションリンクの表示を切り替える
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active'); // activeクラスの切り替え
+        });
+    });
+</script>

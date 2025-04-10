@@ -9,6 +9,7 @@ body {
     line-height: 1.8;
     color: #333;
     background-color: #f9f9f9;
+    padding-top: 60px; /* ナビゲーションバーの高さ分だけコンテンツを下に */
 }
 
 header {
