@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works - 波音 ytilibillaf</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <style>
         /* Worksセクションのギャラリー */
         .gallery {
-            display: grid; /* グリッドレイアウトを使用 */
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 各画像の最小幅を250pxに設定 */
-            gap: 15px; /* 画像間のスペースを設定 */
+            display: flex; /* フレックスレイアウトを使用 */
+            flex-direction: column; /* 縦に並べる */
+            gap: 60px; /* 画像間のスペースを設定 */
         }
 
         .gallery img {
-            width: 100%; /* 画像をグリッドセルの幅に合わせる */
+            width: 45%; /* 画像をコンテナの幅の45%に縮小 */
             height: auto; /* 縦横比を維持 */
-            object-fit: cover; /* セル内で画像を適切に収める */
+            object-fit: cover; /* コンテナ内で画像を適切に収める */
             border-radius: 5px; /* 角を少し丸くする */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
@@ -28,48 +28,16 @@
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
         }
 
-        /* ランダムなサイズを設定 */
-        .gallery img:nth-child(1) {
-            grid-column: span 2; /* 横に2列分を占める */
-            grid-row: span 2; /* 縦に2行分を占める */
-        }
-
-        /* img_2.jpg を大きく表示 */
-        .gallery img:nth-child(2) {
-            grid-column: span 2; /* 横に2列分を占める */
-            grid-row: span 2; /* 縦に2行分を占める */
-        }
-
-        /* img_4.jpg を大きく表示 */
-        .gallery img:nth-child(3) {
-            grid-column: span 2; /* 横に2列分を占める */
-            grid-row: span 2; /* 縦に2行分を占める */
-        }
-
-        .gallery img:nth-child(5) {
-            grid-column: span 1; /* 横に1列分を占める */
-            grid-row: span 1; /* 縦に1行分を占める */
-        }
-
-        .gallery img:nth-child(7) {
-            grid-column: span 3; /* 横に3列分を占める */
-            grid-row: span 2; /* 縦に2行分を占める */
-        }
-
-        .gallery img:nth-child(9) {
-            grid-column: span 1; /* 横に1列分を占める */
-            grid-row: span 1; /* 縦に1行分を占める */
-        }
-
-        .gallery img:nth-child(11) {
-            grid-column: span 2; /* 横に2列分を占める */
-            grid-row: span 2; /* 縦に2行分を占める */
-        }
-
-        /* img_14.jpg をもっと大きく表示 */
+        /* 横長の写真を大きく表示 */
+        .gallery img:nth-child(2),
+        .gallery img:nth-child(4),
+        .gallery img:nth-child(7),
         .gallery img:nth-child(13) {
-            grid-column: span 3; /* 横に3列分を占める */
-            grid-row: span 3; /* 縦に3行分を占める */
+            width: 150%; /* 横長の写真を大きくする */
+        }
+
+        .gallery figcaption {
+            font-family: 'Noto Serif JP', 'Noto Serif KR', serif; /* 日本語と韓国語に対応するフォント */
         }
     </style>
 </head>
@@ -91,19 +59,58 @@
             <h2>Works</h2>
             
             <div class="gallery">
-                <img src="assets/img_1.jpg" alt="作品1">
-                <img src="assets/img_2.jpg" alt="作品2">
-                <img src="assets/img_4.jpg" alt="作品4">
-                <img src="assets/img_5.jpg" alt="作品5">
-                <img src="assets/img_6.jpg" alt="作品6">
-                <img src="assets/img_7.jpg" alt="作品7">
-                <img src="assets/img_8.jpg" alt="作品8">
-                <img src="assets/img_9.jpg" alt="作品9">
-                <img src="assets/img_10.jpg" alt="作品10">
-                <img src="assets/img_11.jpg" alt="作品11">
-                <img src="assets/img_12.jpg" alt="作品12">
-                <img src="assets/img_13.jpg" alt="作品13">
-                <img src="assets/img_14.jpg" alt="作品14">
+                <figure>
+                    <img src="assets/img_1.jpg" alt="作品1">
+                    <figcaption>유혈</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_2.jpg" alt="作品2">
+                    <figcaption>回復の森</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_4.jpg" alt="作品4">
+                    <figcaption>숨결</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_5.jpg" alt="作品5">
+                    <figcaption>海辺の風景</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_6.jpg" alt="作品6">
+                    <figcaption>夕焼けの丘</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_7.jpg" alt="作品7">
+                    <figcaption>都会の夜景</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_8.jpg" alt="作品8">
+                    <figcaption>春の花畑</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_9.jpg" alt="作品9">
+                    <figcaption>冬の森</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_10.jpg" alt="作品10">
+                    <figcaption>古代の遺跡</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_11.jpg" alt="作品11">
+                    <figcaption>山岳の風景</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_12.jpg" alt="作品12">
+                    <figcaption>湖畔の静けさ</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_13.jpg" alt="作品13">
+                    <figcaption>砂漠の夕日</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img_14.jpg" alt="作品14">
+                    <figcaption>宇宙の神秘</figcaption>
+                </figure>
             </div>
         </section>
     </main>

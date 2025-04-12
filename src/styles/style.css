@@ -90,21 +90,37 @@ section {
 
 /* ギャラリーのスタイル */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column; /* 縦に一列に並べる */
+    gap: 40px; /* 各写真の間隔を広げる */
+    align-items: center; /* 写真を中央揃えにする */
+    padding: 20px 0;
+}
+
+.gallery figure {
+    margin: 0;
+    width: 100%; /* 写真を親要素の幅に合わせる */
+    max-width: 1200px; /* 最大幅を設定 */
+    text-align: center;
 }
 
 .gallery img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* 写真を幅いっぱいに表示 */
+    height: auto; /* 縦横比を維持 */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02); /* ホバー時に少し拡大 */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+}
+
+.gallery figcaption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
 }
 
 footer {
