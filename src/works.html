@@ -11,7 +11,7 @@
         .gallery {
             display: flex; /* フレックスレイアウトを使用 */
             flex-direction: column; /* 縦に並べる */
-            gap: 60px; /* 画像間のスペースを設定 */
+            gap: 80px; /* 画像間のスペースを設定 */
         }
 
         .gallery img {
@@ -57,63 +57,37 @@
     <main>
         <section id="works">
             <h2>Works</h2>
-            
-            <div class="gallery">
-                <figure>
-                    <img src="assets/img_1.jpg" alt="作品1">
-                    <figcaption>유혈</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_2.jpg" alt="作品2">
-                    <figcaption>回復の森</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_4.jpg" alt="作品4">
-                    <figcaption>숨결</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_5.jpg" alt="作品5">
-                    <figcaption>海辺の風景</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_6.jpg" alt="作品6">
-                    <figcaption>夕焼けの丘</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_7.jpg" alt="作品7">
-                    <figcaption>都会の夜景</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_8.jpg" alt="作品8">
-                    <figcaption>春の花畑</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_9.jpg" alt="作品9">
-                    <figcaption>冬の森</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_10.jpg" alt="作品10">
-                    <figcaption>古代の遺跡</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_11.jpg" alt="作品11">
-                    <figcaption>山岳の風景</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_12.jpg" alt="作品12">
-                    <figcaption>湖畔の静けさ</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_13.jpg" alt="作品13">
-                    <figcaption>砂漠の夕日</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img_14.jpg" alt="作品14">
-                    <figcaption>宇宙の神秘</figcaption>
-                </figure>
-            </div>
+            <div class="gallery" id="gallery"></div> <!-- gallery要素にIDを追加 -->
         </section>
     </main>
+    <script>
+        const images = [
+            { src: "assets/img_1.jpg", alt: "作品1" },
+            { src: "assets/img_2.jpg", alt: "作品2" },
+            { src: "assets/img_4.jpg", alt: "作品4" },
+            { src: "assets/img_5.jpg", alt: "作品5" },
+            { src: "assets/img_6.jpg", alt: "作品6" },
+            { src: "assets/img_7.jpg", alt: "作品7" },
+            { src: "assets/img_8.jpg", alt: "作品8" },
+            { src: "assets/img_9.jpg", alt: "作品9" },
+            { src: "assets/img_10.jpg", alt: "作品10" },
+            { src: "assets/img_11.jpg", alt: "作品11" },
+            { src: "assets/img_12.jpg", alt: "作品12" },
+            { src: "assets/img_13.jpg", alt: "作品13" },
+            { src: "assets/img_14.jpg", alt: "作品14" },
+        ];
+
+        const gallery = document.getElementById("gallery");
+
+        images.forEach(image => {
+            const figure = document.createElement("figure");
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.alt;
+            figure.appendChild(img);
+            gallery.appendChild(figure);
+        });
+    </script>
     <footer>
         <p>&copy; 2025 ytilibillaf. All rights reserved.</p>
     </footer>
