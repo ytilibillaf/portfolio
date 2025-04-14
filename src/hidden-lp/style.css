@@ -1,74 +1,110 @@
 body {
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #0ff;
-        font-family: monospace;
-        overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #0ff;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+#loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    position: fixed; /* 固定位置に設定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 他の要素より前面に表示 */
+    transition: opacity 0.5s ease-out; /* フェードアウト用 */
+}
+
+#loading-screen.hidden {
+    opacity: 0; /* フェードアウト */
+    pointer-events: none; /* フェードアウト後にクリックを無効化 */
+    z-index: -1; /* 他の要素の背面に移動 */
+}
+
+.glitch-text {
+    font-size: 1.5rem;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+.dots::after {
+    content: "";
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0% { content: ""; }
+    25% { content: "."; }
+    50% { content: ".."; }
+    75% { content: "..."; }
+    100% { content: ""; }
+}
+
+
+
+.subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none; /* 要素を非表示にする */
+}   
+
+#main-content {
+    padding-top: 20vh;
+    text-align: center;
+    color: #fff;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* クリックを無効化 */
+    z-index: -1; /* 背景に配置 */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
     }
-    
-    #loading-screen {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #000;
+    50% {
+        opacity: 0.2;
     }
-    
-    .glitch-text {
-        font-size: 1.5rem;
-        color: #0ff;
-        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-        animation: glitch 1s infinite;
-    }
-    
-    @keyframes glitch {
-        0% { transform: translate(0); }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(2px, -2px); }
-        60% { transform: translate(-1px, 1px); }
-        80% { transform: translate(1px, -1px); }
-        100% { transform: translate(0); }
-    }
-    
-    .dots::after {
-        content: "";
-        animation: dots 1.5s steps(4, end) infinite;
-    }
-    
-    @keyframes dots {
-        0% { content: ""; }
-        25% { content: "."; }
-        50% { content: ".."; }
-        75% { content: "..."; }
-        100% { content: ""; }
-    }
-    
-    .ascii-art {
-        white-space: pre;
-        text-align: center;
-        line-height: 1.5;
-        margin-top: 2rem;
-        color: #8ff;
-    }
-    
-    .subtitle {
-        text-align: center;
-        font-size: 1rem;
-        color: #ccc;
-        margin-top: 1rem;
-    }
-    
-    .hidden {
-        display: none; /* 要素を非表示にする */
-    }
-    
-    #main-content {
-        padding-top: 20vh;
-        text-align: center;
-    }
-    
-    .fade-out {
-        opacity: 0;
-        transition: opacity 0.5s ease-out;
-    }
+}
