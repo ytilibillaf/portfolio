@@ -1,0 +1,74 @@
+body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #0ff;
+        font-family: monospace;
+        overflow: hidden;
+    }
+    
+    #loading-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #000;
+    }
+    
+    .glitch-text {
+        font-size: 1.5rem;
+        color: #0ff;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+        animation: glitch 1s infinite;
+    }
+    
+    @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(2px, -2px); }
+        60% { transform: translate(-1px, 1px); }
+        80% { transform: translate(1px, -1px); }
+        100% { transform: translate(0); }
+    }
+    
+    .dots::after {
+        content: "";
+        animation: dots 1.5s steps(4, end) infinite;
+    }
+    
+    @keyframes dots {
+        0% { content: ""; }
+        25% { content: "."; }
+        50% { content: ".."; }
+        75% { content: "..."; }
+        100% { content: ""; }
+    }
+    
+    .ascii-art {
+        white-space: pre;
+        text-align: center;
+        line-height: 1.5;
+        margin-top: 2rem;
+        color: #8ff;
+    }
+    
+    .subtitle {
+        text-align: center;
+        font-size: 1rem;
+        color: #ccc;
+        margin-top: 1rem;
+    }
+    
+    .hidden {
+        display: none; /* 要素を非表示にする */
+    }
+    
+    #main-content {
+        padding-top: 20vh;
+        text-align: center;
+    }
+    
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+    }
