@@ -19,29 +19,25 @@
     <header>
         <!-- ナビゲーションバーを読み込む -->
         <div id="nav-placeholder"></div>
-        <!-- ハンバーガーメニュー -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#home">ホーム</a></li>
-                <li><a href="#about">概要</a></li>
-                <li><a href="#works">作品</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-        </nav>
     </header>
     <script>
-        // nav.html を読み込むスクリプト
-        fetch('nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
+        // nav.html + nav.css + nav.js を読み込む
+            fetch('src/styles/nav/nav.html') // ← nav.html のパスを修正
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'src/styles/nav/nav.css'; // ← CSSのパスも同様に
+        document.head.appendChild(link);
+
+        const script = document.createElement('script');
+        script.src = 'src/styles/nav/nav.js'; // ← JSも
+        document.body.appendChild(script);
+    });
     </script>
+    
     <main>
 <section class="hero">
             <h1>星屑</h1>

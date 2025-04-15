@@ -13,11 +13,20 @@
         <div id="nav-placeholder"></div>
     </header>
     <script>
-        // nav.html を読み込むスクリプト
-        fetch('nav.html')
+        // nav.html + nav.css + nav.js を読み込む
+        fetch('styles/nav/nav.html') // パスを修正
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
+
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'styles/nav/nav.css'; // パスを修正
+                document.head.appendChild(link);
+
+                const script = document.createElement('script');
+                script.src = 'styles/nav/nav.js'; // パスを修正
+                document.body.appendChild(script);
             });
     </script>
     <main>
