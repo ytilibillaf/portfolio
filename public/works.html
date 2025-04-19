@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works - 波音 ytilibillaf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Worksセクションのギャラリー */
+        .gallery {
+            display: flex; /* フレックスレイアウトを使用 */
+            flex-direction: column; /* 縦に並べる */
+            gap: 80px; /* 画像間のスペースを設定 */
+        }
+
+        .gallery img {
+            width: 45%; /* 画像をコンテナの幅の45%に縮小 */
+            height: auto; /* 縦横比を維持 */
+            object-fit: cover; /* コンテナ内で画像を適切に収める */
+            border-radius: 5px; /* 角を少し丸くする */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* ホバー時に拡大 */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+        }
+
+        /* 横長の写真を大きく表示 */
+        .gallery img:nth-child(2),
+        .gallery img:nth-child(4),
+        .gallery img:nth-child(7),
+        .gallery img:nth-child(13) {
+            width: 150%; /* 横長の写真を大きくする */
+        }
+
+        .gallery figcaption {
+            font-family: 'Noto Serif JP', 'Noto Serif KR', serif; /* 日本語と韓国語に対応するフォント */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- ナビゲーションバーを読み込む -->
+        <div id="nav-placeholder"></div>
+    </header>
+    <script>
+        // nav.html + nav.css + nav.js を読み込む
+        fetch('/components/nav/nav.html') // パスを修正
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = '/components/nav/nav.css'; // パスを修正
+                document.head.appendChild(link);
+
+                const script = document.createElement('script');
+                script.src = '/components/nav/nav.js'; // パスを修正
+                document.body.appendChild(script);
+            });
+    </script>
+    
+    <main>
+        <section id="works">
+            <h2>Works</h2>
+            <div class="gallery" id="gallery"></div> <!-- gallery要素にIDを追加 -->
+        </section>
+    </main>
+    <script>
+        const images = [
+            { src: "assets/img_1.jpg", alt: "作品1" },
+            { src: "assets/img_2.jpg", alt: "作品2" },
+            { src: "assets/img_4.jpg", alt: "作品4" },
+            { src: "assets/img_5.jpg", alt: "作品5" },
+            { src: "assets/img_6.jpg", alt: "作品6" },
+            { src: "assets/img_7.jpg", alt: "作品7" },
+            { src: "assets/img_8.jpg", alt: "作品8" },
+            { src: "assets/img_9.jpg", alt: "作品9" },
+            { src: "assets/img_10.jpg", alt: "作品10" },
+            { src: "assets/img_11.jpg", alt: "作品11" },
+            { src: "assets/img_12.jpg", alt: "作品12" },
+            { src: "assets/img_13.jpg", alt: "作品13" },
+            { src: "assets/img_14.jpg", alt: "作品14" },
+        ];
+
+        const gallery = document.getElementById("gallery");
+
+        images.forEach(image => {
+            const figure = document.createElement("figure");
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.alt;
+            figure.appendChild(img);
+            gallery.appendChild(figure);
+        });
+    </script>
+    <footer>
+        <p>&copy; 2025 ytilibillaf. All rights reserved.</p>
+    </footer>
+</body>
+</html>

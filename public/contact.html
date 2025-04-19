@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - 波音 ytilibillaf</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* Contactセクションのスタイル */
@@ -92,21 +92,19 @@
         <div id="nav-placeholder"></div>
     </header>
     <script>
-        // nav.html
-        fetch('styles/nav/nav.html') // パスを修正
+        // nav.html + nav.css + nav.js を読み込む
+        fetch('/components/nav/nav.html') // パスを修正
             .then(response => response.text())
             .then(data => {
-                console.log(data);
-                
                 document.getElementById('nav-placeholder').innerHTML = data;
 
                 const link = document.createElement('link');
                 link.rel = 'stylesheet';
-                link.href = 'styles/nav/nav.css'; // パスを修正
+                link.href = '/components/nav/nav.css'; // パスを修正
                 document.head.appendChild(link);
 
                 const script = document.createElement('script');
-                script.src = 'styles/nav/nav.js'; // パスを修正
+                script.src = '/components/nav/nav.js'; // パスを修正
                 document.body.appendChild(script);
             });
     </script>
@@ -125,6 +123,5 @@
     <footer>
         <p>&copy; 2025 ytilibillaf. All rights reserved.</p>
     </footer>
-    <script src="./styles/nav/nav.js"></script>
 </body>
 </html>
